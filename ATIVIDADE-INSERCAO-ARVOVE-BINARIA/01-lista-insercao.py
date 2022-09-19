@@ -1,3 +1,11 @@
+# A partir da implementação da nossa classe célula, implemente também a classe ABB.
+
+# Essa classe deve ter como variável (componente) a raiz da árvore.
+
+# Em seguida crie uma função dentro da classe ABB denominada teste.
+
+# Dentro dessa função crie 3 células com os valores 4,3,5 e defina a componente raiz apontando para a célula 4.
+
 class celula:
     def __init__(self,valor,FE=None,FD=None):
         self.valor = valor
@@ -7,7 +15,6 @@ class celula:
         return 'No('+str(self.valor)+')'
 
 class arvoreBinaria:
-  # Inicializar nossa variavel raiz com vazia (None)!
   def __init__(self):
     self.raiz = None
   
@@ -21,25 +28,13 @@ class arvoreBinaria:
       else:
         aux1=aux1.fd
     return aux2
-  # INSERÇÃO:
-  # Encontrar o nó PAI
-  # Conectar o nó PAI com o NOVO nó
-  def insercao(self, valor):
-    novo = celula(valor)
-    if (self.raiz == None):
-      self.raiz = novo
-    else:
-      pai = self.buscaPai(valor)
-      if (valor < pai.valor):
-        pai.fe = novo
-      else:
-        pai.fd = novo
 
 abb = arvoreBinaria()
+r = celula(4)
+a = celula(3)
+b = celula(5)
 
+r.fe = a
+r.fd = b
 
-abb.insercao(int(input()))
-abb.insercao(int(input()))
-abb.insercao(int(input()))
-
-print(abb)
+print(r, r.fe, r.fd)
